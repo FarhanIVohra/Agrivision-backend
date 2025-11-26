@@ -43,3 +43,4 @@ seaborn
 
 # Utility Tools
 tqdm
+pydantic[email]
