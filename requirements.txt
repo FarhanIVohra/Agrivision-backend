@@ -1,22 +1,45 @@
+# FastAPI core
 fastapi
 uvicorn
 pydantic
+
+# Authentication & Security
+bcrypt
+passlib[bcrypt]
+python-jose[cryptography]
+PyJWT
+
+# Database / Supabase
+supabase
+postgrest
+gotrue
+storage3
+
+# Environment & Uploads
+python-dotenv
+python-multipart
+
+# ML / AI / Models
 numpy
 pandas
 scikit-learn
 joblib
-python-multipart
-python-dotenv
 pillow
-requests
-httpx
 onnxruntime
 protobuf
 ultralytics
-
-bcrypt
-passlib[bcrypt]
-python-jose[cryptography]
 tensorflow
-PyJWT
-supabase
+
+# Networking & APIs
+requests
+httpx
+
+# Scheduling / Background Tasks
+apscheduler
+
+# Visualization (if using graphs in API responses)
+matplotlib
+seaborn
+
+# Utility Tools
+tqdm
