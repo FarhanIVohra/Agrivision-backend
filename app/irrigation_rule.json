@@ -1,0 +1,149 @@
+{
+  "irrigation_rules": {
+    "wheat": {
+      "moisture_threshold": 30,
+      "irrigation_amount": 15,
+      "check_interval": 2,
+      "optimal_time": "6:00 AM",
+      "season": "winter",
+      "growth_stages": {
+        "germination": {"moisture_threshold": 35, "irrigation_amount": 10},
+        "tillering": {"moisture_threshold": 30, "irrigation_amount": 15},
+        "flowering": {"moisture_threshold": 25, "irrigation_amount": 20},
+        "grain_filling": {"moisture_threshold": 30, "irrigation_amount": 18}
+      }
+    },
+    "rice": {
+      "moisture_threshold": 40,
+      "irrigation_amount": 25,
+      "check_interval": 1,
+      "optimal_time": "5:30 AM",
+      "season": "monsoon",
+      "growth_stages": {
+        "transplanting": {"moisture_threshold": 45, "irrigation_amount": 30},
+        "tillering": {"moisture_threshold": 40, "irrigation_amount": 25},
+        "flowering": {"moisture_threshold": 35, "irrigation_amount": 28},
+        "grain_filling": {"moisture_threshold": 40, "irrigation_amount": 22}
+      }
+    },
+    "maize": {
+      "moisture_threshold": 35,
+      "irrigation_amount": 20,
+      "check_interval": 3,
+      "optimal_time": "6:30 AM",
+      "season": "summer",
+      "growth_stages": {
+        "germination": {"moisture_threshold": 40, "irrigation_amount": 15},
+        "vegetative": {"moisture_threshold": 35, "irrigation_amount": 20},
+        "flowering": {"moisture_threshold": 30, "irrigation_amount": 25},
+        "grain_filling": {"moisture_threshold": 35, "irrigation_amount": 22}
+      }
+    },
+    "paddy": {
+      "moisture_threshold": 40,
+      "irrigation_amount": 25,
+      "check_interval": 1,
+      "optimal_time": "5:30 AM",
+      "season": "monsoon",
+      "growth_stages": {
+        "transplanting": {"moisture_threshold": 45, "irrigation_amount": 30},
+        "tillering": {"moisture_threshold": 40, "irrigation_amount": 25},
+        "flowering": {"moisture_threshold": 35, "irrigation_amount": 28},
+        "grain_filling": {"moisture_threshold": 40, "irrigation_amount": 22}
+      }
+    },
+    "tomato": {
+      "moisture_threshold": 25,
+      "irrigation_amount": 12,
+      "check_interval": 1,
+      "optimal_time": "7:00 AM",
+      "season": "all_season",
+      "growth_stages": {
+        "seedling": {"moisture_threshold": 30, "irrigation_amount": 8},
+        "vegetative": {"moisture_threshold": 25, "irrigation_amount": 12},
+        "flowering": {"moisture_threshold": 20, "irrigation_amount": 15},
+        "fruiting": {"moisture_threshold": 25, "irrigation_amount": 18}
+      }
+    },
+    "cotton": {
+      "moisture_threshold": 33,
+      "irrigation_amount": 18,
+      "check_interval": 2,
+      "optimal_time": "6:00 AM",
+      "season": "summer",
+      "growth_stages": {
+        "germination": {"moisture_threshold": 38, "irrigation_amount": 12},
+        "squaring": {"moisture_threshold": 33, "irrigation_amount": 18},
+        "flowering": {"moisture_threshold": 28, "irrigation_amount": 22},
+        "boll_development": {"moisture_threshold": 33, "irrigation_amount": 20}
+      }
+    },
+    "sugarcane": {
+      "moisture_threshold": 40,
+      "irrigation_amount": 25,
+      "check_interval": 1,
+      "optimal_time": "5:00 AM",
+      "season": "all_season",
+      "growth_stages": {
+        "germination": {"moisture_threshold": 45, "irrigation_amount": 20},
+        "tillering": {"moisture_threshold": 40, "irrigation_amount": 25},
+        "grand_growth": {"moisture_threshold": 35, "irrigation_amount": 30},
+        "maturity": {"moisture_threshold": 40, "irrigation_amount": 22}
+      }
+    }
+  },
+  "general_rules": {
+    "rainfall_threshold": 5,
+    "temperature_threshold": {
+      "min": 15,
+      "max": 35
+    },
+    "humidity_threshold": {
+      "min": 40,
+      "max": 80
+    },
+    "wind_speed_threshold": 15,
+    "default_irrigation_time": "6:00 AM",
+    "emergency_irrigation_threshold": 15,
+    "water_conservation_mode": {
+      "enabled": true,
+      "reduction_percentage": 10
+    }
+  },
+  "weather_conditions": {
+    "sunny": {
+      "irrigation_multiplier": 1.2,
+      "evaporation_rate": "high"
+    },
+    "cloudy": {
+      "irrigation_multiplier": 1.0,
+      "evaporation_rate": "medium"
+    },
+    "rainy": {
+      "irrigation_multiplier": 0.5,
+      "evaporation_rate": "low"
+    },
+    "windy": {
+      "irrigation_multiplier": 1.1,
+      "evaporation_rate": "high"
+    }
+  },
+  "soil_types": {
+    "clay": {
+      "water_retention": "high",
+      "irrigation_frequency_modifier": 0.8
+    },
+    "sandy": {
+      "water_retention": "low",
+      "irrigation_frequency_modifier": 1.3
+    },
+    "loamy": {
+      "water_retention": "medium",
+      "irrigation_frequency_modifier": 1.0
+    },
+    "silt": {
+      "water_retention": "medium-high",
+      "irrigation_frequency_modifier": 0.9
+    }
+  }
+}
