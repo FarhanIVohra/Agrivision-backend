@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: agrismart
+Version: 1.0.0
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: python-dotenv
+Requires-Dist: tensorflow
+Requires-Dist: joblib
+Requires-Dist: pydantic
+Requires-Dist: scikit-learn
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: requires-dist

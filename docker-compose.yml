@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - agrismart-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - DEBUG=false
+    env_file:
+      - ./app/.env
+    volumes:
+      - ./app/ml_models:/app/ml_models:ro
+    networks:
+      - agrismart-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - agrismart-network
+    restart: unless-stopped
+
+networks:
+  agrismart-network:
+    driver: bridge
+
+volumes:
+  ml_models:
+    driver: local

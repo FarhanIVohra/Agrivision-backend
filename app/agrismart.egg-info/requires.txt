@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-dotenv
+tensorflow
+joblib
+pydantic
+scikit-learn
+opencv-python
+numpy
+pandas
