@@ -46,7 +46,8 @@ app = FastAPI(
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:4028", "http://localhost:4029", "http://127.0.0.1:3000", "http://127.0.0.1:4028", "http://127.0.0.1:4029"],
+    # allow_origins=["https://agrismart-phi.vercel.app", "http://localhost:3000"],
+    allow_origins=["http://localhost:3000", "http://localhost:4028", "http://localhost:4029","https://agrismart-phi.vercel.app", "http://127.0.0.1:3000", "http://127.0.0.1:4028", "http://127.0.0.1:4029"],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
